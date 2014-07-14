@@ -35,7 +35,7 @@ public class Sort {
     public static void main(String args[]) {
         int vec[] = new int[] { 37, 47, 23, -5, 19, 56 };
         int temp;
-        // Ñ¡ÔñÅÅĞò·¨(Selection Sort)
+        // é€‰æ‹©æ’åºæ³•(Selection Sort)
         long begin = System.currentTimeMillis();
         for (int k = 0; k < 1000000; k++) {
             for (int i = 0; i < vec.length; i++) {
@@ -50,12 +50,12 @@ public class Sort {
             }
         }
         long end = System.currentTimeMillis();
-        System.out.println("Ñ¡Ôñ·¨ÓÃÊ±Îª£º" + (end - begin));
-        // ´òÓ¡ÅÅĞòºÃµÄ½á¹û
+        System.out.println("é€‰æ‹©æ³•ç”¨æ—¶ä¸ºï¼š" + (end - begin));
+        // æ‰“å°æ’åºå¥½çš„ç»“æœ
         for (int i = 0; i < vec.length; i++) {
             System.out.println(vec[i]);
         }
-        // Ã°ÅİÅÅĞò·¨(Bubble Sort)
+        // å†’æ³¡æ’åºæ³•(Bubble Sort)
         begin = System.currentTimeMillis();
         for (int k = 0; k < 1000000; k++) {
             for (int i = 0; i < vec.length; i++) {
@@ -70,13 +70,13 @@ public class Sort {
             }
         }
         end = System.currentTimeMillis();
-        System.out.println("Ã°Åİ·¨ÓÃÊ±Îª£º" + (end - begin));
-        // ´òÓ¡ÅÅĞòºÃµÄ½á¹û
+        System.out.println("å†’æ³¡æ³•ç”¨æ—¶ä¸ºï¼š" + (end - begin));
+        // æ‰“å°æ’åºå¥½çš„ç»“æœ
         for (int i = 0; i < vec.length; i++) {
             System.out.println(vec[i]);
         }
 
-        // ²åÈëÅÅĞò·¨(Insertion Sort)
+        // æ’å…¥æ’åºæ³•(Insertion Sort)
         begin = System.currentTimeMillis();
         for (int k = 0; k < 1000000; k++) {
             for (int i = 1; i < vec.length; i++) {
@@ -92,13 +92,13 @@ public class Sort {
             }
         }
         end = System.currentTimeMillis();
-        System.out.println("²åÈë·¨ÓÃÊ±Îª£º" + (end - begin));
-        // ´òÓ¡ÅÅĞòºÃµÄ½á¹û
+        System.out.println("æ’å…¥æ³•ç”¨æ—¶ä¸ºï¼š" + (end - begin));
+        // æ‰“å°æ’åºå¥½çš„ç»“æœ
         for (int i = 0; i < vec.length; i++) {
             System.out.println(vec[i]);
         }
 
-        // ¿ìËÙÅÅĞò·¨(Quick Sort)
+        // å¿«é€Ÿæ’åºæ³•(Quick Sort)
 
         Sort s = new Sort();
         begin = System.currentTimeMillis();
@@ -106,8 +106,8 @@ public class Sort {
             s.quicksort(vec, 0, 5);
         }
         end = System.currentTimeMillis();
-        System.out.println("¿ìËÙ·¨ÓÃÊ±Îª£º" + (end - begin));
-        // ´òÓ¡ÅÅĞòºÃµÄ½á¹û
+        System.out.println("å¿«é€Ÿæ³•ç”¨æ—¶ä¸ºï¼š" + (end - begin));
+        // æ‰“å°æ’åºå¥½çš„ç»“æœ
         for (int i = 0; i < vec.length; i++) {
             System.out.println(vec[i]);
         }

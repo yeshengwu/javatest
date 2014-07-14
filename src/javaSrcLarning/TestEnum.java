@@ -46,12 +46,12 @@ public class TestEnum {
             System.out.println("each typeEnum:" + string);
         }
 
-        // EnumSetµÄÊ¹ÓÃ
+        // EnumSetçš„ä½¿ç”¨
         EnumSet<TypeEnum> typeMap = EnumSet.allOf(TypeEnum.class);
         for (TypeEnum typeEnum2 : typeMap) {
             System.out.println("EnumSet each typeEnum:" + typeEnum2);
         }
-        // EnumMapµÄÊ¹ÓÃ
+        // EnumMapçš„ä½¿ç”¨
         EnumMap<TypeEnum, String> enumMap = new EnumMap<TestEnum.TypeEnum, String>(TypeEnum.class);
         enumMap.put(TypeEnum.type1, "is type1");
         enumMap.put(TypeEnum.type2, "is type2");

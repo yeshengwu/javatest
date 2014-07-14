@@ -1,7 +1,7 @@
 package genericity.noGen;
 
 public class Gen2 {
-    private Object ob; // 定义一个通用类型成员
+    private Object ob; // 瀹氫箟涓�涓�氱敤绫诲瀷鎴愬憳
 
     public Gen2(Object ob) {
         this.ob = ob;
@@ -16,6 +16,6 @@ public class Gen2 {
     }
 
     public void showTyep() {
-        System.out.println("T的实际类型是: " + ob.getClass().getName());
+        System.out.println("T鐨勫疄闄呯被鍨嬫槸: " + ob.getClass().getName());
     }
 }

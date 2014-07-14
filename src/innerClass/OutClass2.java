@@ -1,6 +1,6 @@
 package innerClass;
 
-// 非静态内剖类：Inner Class
+// 闈為潤鎬佸唴鍓栫被锛欼nner Class
 public class OutClass2 {
     public int oid;
     public String oname;

@@ -14,7 +14,7 @@ public class MainTest {
         // System.out.println(i);
         // }
         //
-        // System.out.println(stringCut("ÉÏº£ÊĞ$Ö±Ï½ÊĞ$»ÆÆÖÇø"));
+        // System.out.println(stringCut("ä¸Šæµ·å¸‚$ç›´è¾–å¸‚$é»„æµ¦åŒº"));
         // System.out.println("t="+isA());
         //
         // long tt=86400 * 1000;
@@ -103,7 +103,7 @@ public class MainTest {
     }
 
     /**
-     * ×Ö·û´®½ØÈ¡
+     * å­—ç¬¦ä¸²æˆªå–
      * 
      * @param str1
      * @return

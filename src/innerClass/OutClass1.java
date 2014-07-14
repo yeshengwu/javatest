@@ -1,6 +1,6 @@
 package innerClass;
 
-// ¾²Ì¬ÄÚÆÊÀà£ºStatic Nested Class
+// é™æ€å†…å‰–ç±»ï¼šStatic Nested Class
 public class OutClass1 {
     public int oid;
     public String oname;

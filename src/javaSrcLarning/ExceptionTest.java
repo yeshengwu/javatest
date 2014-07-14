@@ -4,7 +4,7 @@ package javaSrcLarning;
  * @author Evan.Ye
  * @date 2013-10-21
  * @version 1.0.0 http://blog.csdn.net/kiritor/article/details/12215439
- * @Description:try¡¢catch¡¢finallyÇÉÓöreturn
+ * @Description:tryã€catchã€finallyå·§é‡return
  */
 public class ExceptionTest {
     @SuppressWarnings("finally")

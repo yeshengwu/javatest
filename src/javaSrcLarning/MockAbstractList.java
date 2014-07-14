@@ -10,7 +10,7 @@ import java.util.ListIterator;
  * @author Evan.Ye
  * @date 2013-8-4
  * @version 1.0.0
- * @Description:ÎªÁË¿´ extendsÒÔ¼°implemetsºó»áÖØÔØµÄ·½·¨
+ * @Description:ä¸ºäº†çœ‹ extendsä»¥åŠimplemetsåä¼šé‡è½½çš„æ–¹æ³•
  */
 public class MockAbstractList<E> extends AbstractCollection<E> implements List<E> {
 

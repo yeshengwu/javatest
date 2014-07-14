@@ -1,14 +1,14 @@
 package genericity;
 
-// Ê¹ÓÃÁË·ºĞÍ
+// ä½¿ç”¨äº†æ³›å‹
 /**
  * @author
  * @date 2013-8-3
  * @version 1.0.0
- * @Description: http://baike.baidu.com/view/1436058.htm java·ºĞÍ
+ * @Description: http://baike.baidu.com/view/1436058.htm javaæ³›å‹
  */
 public class Gen<T> {
-    private T ob; // ¶¨Òå·ºĞÍ³ÉÔ±±äÁ¿
+    private T ob; // å®šä¹‰æ³›å‹æˆå‘˜å˜é‡
 
     public Gen(T ob) {
         this.ob = ob;
@@ -23,6 +23,6 @@ public class Gen<T> {
     }
 
     public void showType() {
-        System.out.println("TµÄÊµ¼ÊÀàĞÍÊÇ: " + ob.getClass().getName());
+        System.out.println("Tçš„å®é™…ç±»å‹æ˜¯: " + ob.getClass().getName());
     }
 }

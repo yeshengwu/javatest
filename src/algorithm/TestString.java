@@ -25,12 +25,12 @@ public class TestString {
         //
         // }
 
-        String s = "heloloo"; // ´ýÍ³¼Æ×Ö·û´®
-        int max = 0; // ¼ÇÂ¼×î´ó³öÏÖ´ÎÊý
-        int[] cnt = new int[127]; // ÁÙÊ±¼ÆÊýÓÃµÄÊý×é
-        for (int i = 0; i < s.length(); i++) { // Ñ­»·×Ö·ûÒÔ×öÍ³¼Æ
-            char c = s.charAt(i); // È¡³öµ¥¸ö×ÖÄ¸
-            max = (++cnt[c] > max) ? cnt[c] : max; // ¼ÆÊý²¢¼ì²â×î´ó³öÏÖ´ÎÊý
+        String s = "heloloo"; // å¾…ç»Ÿè®¡å­—ç¬¦ä¸²
+        int max = 0; // è®°å½•æœ€å¤§å‡ºçŽ°æ¬¡æ•°
+        int[] cnt = new int[127]; // ä¸´æ—¶è®¡æ•°ç”¨çš„æ•°ç»„
+        for (int i = 0; i < s.length(); i++) { // å¾ªçŽ¯å­—ç¬¦ä»¥åšç»Ÿè®¡
+            char c = s.charAt(i); // å–å‡ºå•ä¸ªå­—æ¯
+            max = (++cnt[c] > max) ? cnt[c] : max; // è®¡æ•°å¹¶æ£€æµ‹æœ€å¤§å‡ºçŽ°æ¬¡æ•°
         }
         System.out.println(max);
 

@@ -4,7 +4,7 @@ package interveiw;
  * @author Evan.Ye
  * @date 2013-7-17
  * @version 1.0.0
- * @Description: ±ÊÊÔÌâÖĞÌâÄ¿ÑéÖ¤
+ * @Description: ç¬”è¯•é¢˜ä¸­é¢˜ç›®éªŒè¯
  */
 public class ChangeExample {
     String str = new String("good");
@@ -33,10 +33,10 @@ public class ChangeExample {
         h1.x++;
         ChangeExample.x--;
         System.out.println("static x=" + x);
-        // °´Î»Òì»ò¡£±ÈÈç¶ş½øÖÆ 1001 ^ 1100 = 0101
-        // 0^0=0£¬1^1=0 £¬1^0 = 1£¬0^1=1¡£
+        // æŒ‰ä½å¼‚æˆ–ã€‚æ¯”å¦‚äºŒè¿›åˆ¶ 1001 ^ 1100 = 0101
+        // 0^0=0ï¼Œ1^1=0 ï¼Œ1^0 = 1ï¼Œ0^1=1ã€‚
         System.out.print("67^3=" + (67 ^ 3)); // 64
-        // °´Î» Óë
+        // æŒ‰ä½ ä¸
         System.out.println("  67&3=" + (67 & 3)); // 3
 
     }

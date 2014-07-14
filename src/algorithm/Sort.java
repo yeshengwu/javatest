@@ -21,22 +21,22 @@ public class Sort {
         // other impl
         /*  int temp;
         for (int i = 0; i < vec.length - 1; i++) {
-        	for (int j = i + 1; j < vec.length; j++) {
-        		if (vec[i] < vec[j]) {
-        			temp = vec[i];
-        			vec[i] = vec[j];
-        			vec[j] = temp;
-        		}
-        	}
+            for (int j = i + 1; j < vec.length; j++) {
+                if (vec[i] < vec[j]) {
+                    temp = vec[i];
+                    vec[i] = vec[j];
+                    vec[j] = temp;
+                }
+            }
         }*/
 
-        System.out.println("Ã°ÅİÅÅĞò");
-        // ´òÓ¡ÅÅĞòºÃµÄ½á¹û
+        System.out.println("å†’æ³¡æ’åº");
+        // æ‰“å°æ’åºå¥½çš„ç»“æœ
         for (int i = 0; i < vec.length; i++) {
             System.out.println(vec[i]);
         }
 
-        // ²åÈëÅÅĞò·¨(Insertion Sort)
+        // æ’å…¥æ’åºæ³•(Insertion Sort)
         // for (int i = 1; i < vec.length; i++) {
         // int j = i;
         // while (vec[j - 1] < vec[i]) {
@@ -51,13 +51,13 @@ public class Sort {
 
         new Sort().sort(vec);
 
-        System.out.println("²åÈë·¨");
-        // ´òÓ¡ÅÅĞòºÃµÄ½á¹û
+        System.out.println("æ’å…¥æ³•");
+        // æ‰“å°æ’åºå¥½çš„ç»“æœ
         for (int i = 0; i < vec.length; i++) {
             System.out.println(vec[i]);
         }
 
-        // Ñ¡ÔñÅÅĞò·¨ ÏÈÑ¡¸öÀÏ´ó£¬ºóÃæÔÙ¸úÀÏ´ó±È Ã°ÅİµÄ¸Ä½ø
+        // é€‰æ‹©æ’åºæ³• å…ˆé€‰ä¸ªè€å¤§ï¼Œåé¢å†è·Ÿè€å¤§æ¯” å†’æ³¡çš„æ”¹è¿›
         for (int i = 0; i < vec.length; i++) {
             for (int j = i + 1; j < vec.length; j++) {
                 if (vec[j] > vec[i]) {
@@ -67,8 +67,8 @@ public class Sort {
                 }
             }
         }
-        System.out.println("Ñ¡ÔñÅÅĞò·¨");
-        // ´òÓ¡ÅÅĞòºÃµÄ½á¹û
+        System.out.println("é€‰æ‹©æ’åºæ³•");
+        // æ‰“å°æ’åºå¥½çš„ç»“æœ
         for (int i = 0; i < vec.length; i++) {
             System.out.println(vec[i]);
         }
@@ -76,7 +76,7 @@ public class Sort {
     }
 
     /**
-     * ²åÈë·¨
+     * æ’å…¥æ³•
      * 
      * @param data
      */

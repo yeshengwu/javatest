@@ -23,10 +23,10 @@ public class MainTest1 {
         s1 = (short) (s1 + 1);
         System.out.println("s1 += 1:" + s1);
 
-        // ×îÓĞĞ§ÂÊÊÇÍ¨¹ıÒÆÎ»²Ù×÷
+        // æœ€æœ‰æ•ˆç‡æ˜¯é€šè¿‡ç§»ä½æ“ä½œ
         int i = 2;
         int resust = i << 3;
-        System.out.println("2³ËÒÔ8£º" + resust);
+        System.out.println("2ä¹˜ä»¥8ï¼š" + resust);
 
     }
 }

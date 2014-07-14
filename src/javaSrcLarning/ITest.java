@@ -7,7 +7,7 @@ public interface ITest extends ITestBase {
 
     /**
      * @param index
-     * @return ITest±¾Éí
+     * @return ITest
      */
     public ITest removeable(int index);
 }

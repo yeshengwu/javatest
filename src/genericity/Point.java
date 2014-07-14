@@ -26,7 +26,7 @@ public class Point<T> {
     }
 
     public static void main(String[] args) {
-        // 定义泛型类Gen的一个Integer版本
+        // 瀹氫箟娉涘瀷绫籊en鐨勪竴涓狪nteger鐗堟湰
         Point<Integer> point1 = new Point<Integer>(4, 2);
         point1.setX(7);
         System.out.println("point1= " + point1.getX());

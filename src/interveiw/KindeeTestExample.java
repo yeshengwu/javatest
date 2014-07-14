@@ -4,7 +4,7 @@ package interveiw;
  * @author Evan.Ye
  * @date 2013-7-17
  * @version 1.0.0
- * @Description: ±ÊÊÔÌâÖĞÌâÄ¿ÑéÖ¤
+ * @Description: ç¬”è¯•é¢˜ä¸­é¢˜ç›®éªŒè¯
  */
 public class KindeeTestExample {
 
@@ -12,25 +12,25 @@ public class KindeeTestExample {
         /*int i = 8;
         switch (i) {
         case 1:
-        	System.out.println("1");
-        	break;
+            System.out.println("1");
+            break;
         case 2:
-        	System.out.println("2");
-        	break;
+            System.out.println("2");
+            break;
         case 3:
-        	System.out.println("3");
-        	break;
+            System.out.println("3");
+            break;
 
         default:
-        	System.out.println("zero");
-        	//Ã»ÓĞbreak Ò²Ò»ÑùÖ´ĞĞ Êä³ö zero
+            System.out.println("zero");
+            //æ²¡æœ‰break ä¹Ÿä¸€æ ·æ‰§è¡Œ è¾“å‡º zero
         }*/
         //
         // KindeeTestExample example=new KindeeTestExample();
         // KindeeB foo=example.new KindeeB();
         // example.test(foo);
 
-        // java ¼¯ºÏ¿ò¼ÜÔ´ÂëÑ§Ï°
+        // java é›†åˆæ¡†æ¶æºç å­¦ä¹ 
         // ArrayList<String> teStrings=new ArrayList<String>();
         // teStrings.add("test");
         // Object[] array=teStrings.toArray();

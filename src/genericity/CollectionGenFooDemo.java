@@ -7,16 +7,16 @@ public class CollectionGenFooDemo {
     public static void main(String args[]) {
         CollectionGenFoo<ArrayList> listFoo = null;
         listFoo = new CollectionGenFoo<ArrayList>(new ArrayList());
-        // ³ö´íÁË,²»ÈÃÕâÃ´¸É¡£
-        // Ô­À´×÷ÕßĞ´µÄÕâ¸öµØ·½ÓĞÎó£¬ĞèÒª½«listFoo¸ÄÎªlistFoo1
+        // å‡ºé”™äº†,ä¸è®©è¿™ä¹ˆå¹²ã€‚
+        // åŸæ¥ä½œè€…å†™çš„è¿™ä¸ªåœ°æ–¹æœ‰è¯¯ï¼Œéœ€è¦å°†listFooæ”¹ä¸ºlistFoo1
         // CollectionGenFoo<Collection> listFoo1 = null;
         // listFoo1=new CollectionGenFoo<ArrayList>(new ArrayList());
 
-        // ÏÖÔÚ²»»á³ö´íÁË
-        // Ô­À´×÷ÕßĞ´µÄÕâ¸öµØ·½ÓĞÎó£¬ĞèÒª½«listFoo¸ÄÎªlistFoo1
+        // ç°åœ¨ä¸ä¼šå‡ºé”™äº†
+        // åŸæ¥ä½œè€…å†™çš„è¿™ä¸ªåœ°æ–¹æœ‰è¯¯ï¼Œéœ€è¦å°†listFooæ”¹ä¸ºlistFoo1
         CollectionGenFoo<? extends Collection> listFoo1 = null;
         listFoo1 = new CollectionGenFoo<ArrayList>(new ArrayList());
 
-        System.out.println("ÊµÀı»¯³É¹¦!");
+        System.out.println("å®ä¾‹åŒ–æˆåŠŸ!");
     }
 }

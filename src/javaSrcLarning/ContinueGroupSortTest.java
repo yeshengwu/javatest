@@ -17,7 +17,7 @@ public class ContinueGroupSortTest {
         // 1 6 7
         Arrays.sort(i);
         List<String> values = new ArrayList<String>();
-        int start = i[0];// ¼ÇÂ¼Ã¿Ò»¸öÁ¬ĞøµÄµÚÒ»¸öÊı
+        int start = i[0];// è®°å½•æ¯ä¸€ä¸ªè¿ç»­çš„ç¬¬ä¸€ä¸ªæ•°
         int begin = i[0];
 
         for (int j = 1; j < i.length; j++) {
@@ -29,11 +29,11 @@ public class ContinueGroupSortTest {
 
             begin = i[j];
             if (start == begin
-                    || (start != begin && start == i[j - 1] && j != i.length - 1)) {// Ã»ÓĞÁ¬ĞøµÄ£¬Ö»ÓĞÒ»¸öÊı
+                    || (start != begin && start == i[j - 1] && j != i.length - 1)) {// æ²¡æœ‰è¿ç»­çš„ï¼Œåªæœ‰ä¸€ä¸ªæ•°
                 values.add(String.valueOf(start));
-            } else if (j == i.length - 1 && i[j - 1] == begin - 1) { // ×îºóÒ»×éÁ¬Ğø
+            } else if (j == i.length - 1 && i[j - 1] == begin - 1) { // æœ€åä¸€ç»„è¿ç»­
                 values.add(String.valueOf(start) + "-" + String.valueOf(i[j]));
-            } else { // ×îºóÒ»×é²»Á¬Ğø
+            } else { // æœ€åä¸€ç»„ä¸è¿ç»­
                 if (start != i[j - 1]) {
                     values.add(String.valueOf(start) + "-"
                             + String.valueOf(i[j - 1]));

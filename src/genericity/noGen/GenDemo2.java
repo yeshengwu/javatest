@@ -2,13 +2,13 @@ package genericity.noGen;
 
 public class GenDemo2 {
     public static void main(String[] args) {
-        // 定义类Gen2的一个Integer版本
+        // 瀹氫箟绫籊en2鐨勪竴涓狪nteger鐗堟湰
         Gen2 intOb = new Gen2(new Integer(88));
         intOb.showTyep();
         int i = (Integer) intOb.getOb();
         System.out.println("value= " + i);
         System.out.println("---------------------------------");
-        // 定义类Gen2的一个String版本
+        // 瀹氫箟绫籊en2鐨勪竴涓猄tring鐗堟湰
         Gen2 strOb = new Gen2("Hello Gen!");
         strOb.showTyep();
         String s = (String) strOb.getOb();

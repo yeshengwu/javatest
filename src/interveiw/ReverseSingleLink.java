@@ -2,10 +2,10 @@ package interveiw;
 
 public class ReverseSingleLink {
     public static Node revSingleLink(Node head) {
-        if (head == null) { // Á´±íÎª¿Õ²»ÄÜÄæĞò
+        if (head == null) { // é“¾è¡¨ä¸ºç©ºä¸èƒ½é€†åº
             return head;
         }
-        if (head.getNextNode() == null) { // Èç¹ûÖ»ÓĞÒ»¸ö½áµã£¬µ±È»Äæ¹ıÀ´Ò²ÊÇÍ¬Ò»¸ö
+        if (head.getNextNode() == null) { // å¦‚æœåªæœ‰ä¸€ä¸ªç»“ç‚¹ï¼Œå½“ç„¶é€†è¿‡æ¥ä¹Ÿæ˜¯åŒä¸€ä¸ª
             return head;
         }
         Node rhead = revSingleLink(head.getNextNode());

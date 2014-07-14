@@ -69,13 +69,13 @@ public class mian {
 
         int result = ver_a.compareTo(ver_b);
         if (result < 0) {
-            System.out.println("°æ±¾" + ver_a + "Ğ¡ÓÚ°æ±¾" + ver_b);
+            System.out.println("ç‰ˆæœ¬" + ver_a + "å°äºç‰ˆæœ¬" + ver_b);
             return true;
         } else if (result > 0) {
-            System.out.println("°æ±¾" + ver_a + "´óÓÚ°æ±¾" + ver_b);
+            System.out.println("ç‰ˆæœ¬" + ver_a + "å¤§äºç‰ˆæœ¬" + ver_b);
             return false;
         } else {
-            System.out.println("°æ±¾" + ver_a + "µÈÓÚ°æ±¾" + ver_b);
+            System.out.println("ç‰ˆæœ¬" + ver_a + "ç­‰äºç‰ˆæœ¬" + ver_b);
             return false;
         }
     }
@@ -154,7 +154,7 @@ public class mian {
     }
 
     /**
-     * * ºÁÃë×ªÈÕÆÚ×Ö·û´® * * @param str * @return
+     * * æ¯«ç§’è½¬æ—¥æœŸå­—ç¬¦ä¸² * * @param str * @return
      */
     public static String getDateTimeByMillisecond(String fristTime, String SecondTime) {
         try {
@@ -166,7 +166,7 @@ public class mian {
             /*
             String dateStr = "";   
             Date date = new Date();   
-            //formatµÄ¸ñÊ½¿ÉÒÔÈÎÒâ   
+            //formatçš„æ ¼å¼å¯ä»¥ä»»æ„   
             //            DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");   
             //            DateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH/mm/ss");   
             DateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");   
@@ -221,15 +221,15 @@ public class mian {
                     long result = frist - second;
                     // Log.e("fan", frist+"::::"+second+":::"+result);
                     if (result < 30000) {
-                        System.out.println("getDateTimeByMillisecond: " + "½ñÌì"); // 5
+                        System.out.println("getDateTimeByMillisecond: " + "ä»Šå¤©"); // 5
                         return "0";
                     } else if (result > 0 && result < 86400000) {
-                        System.out.println("getDateTimeByMillisecond: " + "×òÌì"); // 5
-                        // ×òÌì
+                        System.out.println("getDateTimeByMillisecond: " + "æ˜¨å¤©"); // 5
+                        // æ˜¨å¤©
                         return "1";
                     } else if (result > 86400000 && result < 172800000) {
-                        System.out.println("getDateTimeByMillisecond: " + "Ç°Ìì»òÕß¸üÔç"); // 5
-                        // Ç°Ìì»òÕß¸üÔç
+                        System.out.println("getDateTimeByMillisecond: " + "å‰å¤©æˆ–è€…æ›´æ—©"); // 5
+                        // å‰å¤©æˆ–è€…æ›´æ—©
                         return "2";
                     }
                 } catch (Exception e) {
@@ -252,16 +252,16 @@ public class mian {
             long create = sdf.parse(createTime).getTime();
             Calendar now = Calendar.getInstance();
             long ms = 1000 * (now.get(Calendar.HOUR_OF_DAY) * 3600 + now.get(Calendar.MINUTE) * 60 + now
-                    .get(Calendar.SECOND));// ºÁÃëÊı
+                    .get(Calendar.SECOND));// æ¯«ç§’æ•°
             long ms_now = now.getTimeInMillis();
             if (ms_now - create < ms) {
-                ret = "½ñÌì";
+                ret = "ä»Šå¤©";
             } else if (ms_now - create < (ms + 24 * 3600 * 1000)) {
-                ret = "×òÌì";
+                ret = "æ˜¨å¤©";
             } else if (ms_now - create < (ms + 24 * 3600 * 1000 * 2)) {
-                ret = "Ç°Ìì";
+                ret = "å‰å¤©";
             } else {
-                ret = "¸üÔç";
+                ret = "æ›´æ—©";
             }
             return ret;
         } catch (Exception e) {
@@ -273,7 +273,7 @@ public class mian {
     public static final String STANDARD_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     /**
-     * ½«date×ª»»³ÉjsonÖĞµÄ±ê×¼ÈÕÆÚString¸ñÊ½
+     * å°†dateè½¬æ¢æˆjsonä¸­çš„æ ‡å‡†æ—¥æœŸStringæ ¼å¼
      * 
      * @param date
      * @return
@@ -291,7 +291,7 @@ public class mian {
     public static final String STANDARD_DATE_YMD = "yyyy-MM-dd";
 
     /**
-     * IP×ªÕûĞÍ
+     * IPè½¬æ•´å‹
      * 
      * @param ip
      * @return
@@ -304,7 +304,7 @@ public class mian {
     }
 
     /**
-     * ÕûĞÍ×ªIP
+     * æ•´å‹è½¬IP
      * 
      * @param ipInt
      * @return
@@ -319,7 +319,7 @@ public class mian {
     }
 
     /**
-     * µÃµ½µ±Ìì
+     * å¾—åˆ°å½“å¤©
      * 
      * @return
      */

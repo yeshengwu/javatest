@@ -10,7 +10,7 @@ public class TestMain {
     public static void main(String[] args) {
         String a = "123445";
         fullArray(a, "", 0);
-        System.out.println("ÅÅÁĞ×ÜÊı = " + set.size());
+        System.out.println("æ’åˆ—æ€»æ•° = " + set.size());
 
     }
 
@@ -28,7 +28,7 @@ public class TestMain {
             result = insertStr(temp, i, ch);
             if (k < l - 1)
                 fullArray(a, result, k + 1);
-            if (k + 1 == l) // ÅĞ¶Ï×é×°×Ö·û´®Íê³É
+            if (k + 1 == l) // åˆ¤æ–­ç»„è£…å­—ç¬¦ä¸²å®Œæˆ
             {
                 set.add(result);
                 System.out.println(result);
@@ -37,7 +37,7 @@ public class TestMain {
     }
 
     /**
-     * ÔÚµÚkey¸öÎ»ÖÃ,²åÈë×Ö·û
+     * åœ¨ç¬¬keyä¸ªä½ç½®,æ’å…¥å­—ç¬¦
      * 
      * @param str
      * @return
@@ -46,7 +46,7 @@ public class TestMain {
 
         StringBuilder builder = new StringBuilder();
         int l = str.length();
-        if (key == l) // ÔÚ×îºóÒ»¸öÎ»ÖÃÌí¼Ó×Ö·ûch
+        if (key == l) // åœ¨æœ€åä¸€ä¸ªä½ç½®æ·»åŠ å­—ç¬¦ch
         {
             builder.append(str);
             builder.append(ch);
