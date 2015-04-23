@@ -5,21 +5,15 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.Enumeration;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.TreeMap;
-import java.util.TreeSet;
-import java.util.Vector;
-import java.util.Map.Entry;
-import java.util.Set;
+import java.util.Observable;
+import java.util.Observer;
 
 public class SrcLearningTest {
 
@@ -159,13 +153,132 @@ public class SrcLearningTest {
             params.put(key.trim(), value.trim());
         }
     }
-
+    
+    private String[] getCategroryTags() {
+        String[] tags =new String[]{"1","2"};
+        String tag ="3";
+//        String tag=null;
+        if (tag != null) {
+            int size = tags.length;
+            int newSzie = size + 1;
+            String[] newTags = new String[newSzie];
+            System.arraycopy(tags, 0, newTags, 0, size);
+            newTags[newSzie - 1] = tag;
+            for (int i = 0; i < newTags.length; i++) {
+//                System.err.println(newTags[i]);
+            }
+            return newTags;
+        }
+        return tags;
+    }
+    
+    public <T> T getGenMethodTest(T x){
+        System.out.println(x+" getClass().getName()="+x.getClass().getName());
+        return x;
+    }
+    
+    public List<String> getGroupAList1(List<String> list){
+        System.out.println(list.hashCode());
+        
+        List<String> locaList=list;
+//        list.remove(1);
+        List<String> temp=new ArrayList<String>();
+        for (int i = 0; i < locaList.size(); i++) {
+            if (i==0) {
+                temp.add(list.get(i));
+            }
+        }
+        for (String string : temp) {
+            System.out.println(string);
+        }
+        return temp;
+    }
+    
+    public List<String> getGroupAList2(List<String> list){
+        System.out.println(list.hashCode());
+        List<String> temp=new ArrayList<String>();
+        for (int i = 0; i < list.size(); i++) {
+            if (i==1) {
+                temp.add(list.get(i));
+            }
+        }
+        for (String string : temp) {
+            System.out.println(string);
+        }
+        
+        return temp;
+    }
+    
+    public static final String SERVER_URL = "http://maho.anime.m.kankan.com/";// 外网
+    private static final String MOVIE_UPDATE_URL = SERVER_URL + "movies/episodes?ids=%s";
+    
     public static void main(String[] args) {
         final SrcLearningTest srcLearningTest = new SrcLearningTest();
 
         srcLearningTest.getData();
-
+        for (int i = 0; i < srcLearningTest.getCategroryTags().length; i++) {
+            System.out.println(srcLearningTest.getCategroryTags()[i]);
+        }
+        List<String> groupList=new GroupA().getTeStrings();
+        System.out.println("groupList hash="+groupList.hashCode());
+        srcLearningTest.getGroupAList1(groupList);
+        srcLearningTest.getGroupAList2(groupList);
+        
         System.out.println("plusDay=" + Util.getDateByUnix(srcLearningTest.plus(2) / 1000));
+        
+        System.out.println("genTest return T=" +srcLearningTest.getGenMethodTest(10));
+        
+        try {
+            Class<?> classType = Class.forName("java.lang.String");
+            System.out.println("classType=" +classType.getName());
+        } catch (ClassNotFoundException e2) {
+            // TODO Auto-generated catch block
+            e2.printStackTrace();
+        }
+        
+        Observer one=new Observer() {
+            
+            @Override
+            public void update(Observable o, Object arg) {
+                // TODO Auto-generated method stub
+                System.err.println("o="+o+" arg="+arg);
+            }
+        };
+        MyObservable observable=new MyObservable();
+        observable.setData(11);
+        observable.addObserver(one);
+        
+        observable.notifyObservers(12);
+        
+        System.err.println("||||="+(0|2));
+        System.out.println("||||=" +(512|512));
+        
+        int len=200;
+        List<String> movieIds = new ArrayList<String>();
+        for (int i = 0; i < len; i++) {
+            movieIds.add("4985");
+        }
+        
+        String[] parms = new String[len];
+        movieIds.toArray(parms);
+        String movieIdss = Util.join(",", parms);
+        
+        String ress=String.format(MOVIE_UPDATE_URL, movieIdss);
+        
+        byte[] bytes=ress.getBytes();
+        System.err.println(bytes.length);
+        System.err.println(ress.length());
+        System.err.println(ress);
+        
+        String test="ab";
+        byte[] testbytes=test.getBytes();
+        System.err.println(testbytes.length);
+        System.err.println(test.length());
+        
+        long t1=67796992;
+        long t2=111481134;
+        System.err.println("vall==="+((double)t1/t2));
+        
 
         // boolean isOpen = false;
         // assert isOpen=true; //如果开启了断言，会将isOpen的值改为true
@@ -173,13 +286,18 @@ public class SrcLearningTest {
         boolean isOk = 1 < 2;
         assert isOk;
         System.out.println("程序正常");
+        
+        List<String> list=new ArrayList<>(170000000);
+        System.out.println("evan new success");
+//      2147483647
+        System.err.println("Integer Max="+Integer.MAX_VALUE);
 
         /* // BaseTask任务测试
          ViewTest viewTest = new ViewTest();
          viewTest.view = new ViewDo();
          viewTest.view.setOnClickListener(viewTest);
          viewTest.view.doInBackground();*/
-
+        
         boolean mOnDeleting = true;
         boolean mOnBatching = true;
 
@@ -188,7 +306,6 @@ public class SrcLearningTest {
 
         // Integer[] data=srcLearningTest.mService.getDatas();
         Integer[] data = new Integer[] {};
-        ;
         Arrays.sort(data, new Comparator<Integer>() {
 
             @Override
@@ -205,6 +322,19 @@ public class SrcLearningTest {
         for (Integer integer : data2) {
             System.out.println("again integer=" + integer);
         }
+        
+        /*String content = "type=2&qq=1111111111111&content=亲亲&ext4=anime_app&useragent=1.4.0.0|4.4.2|HUAWEI P7-L07";
+        System.err.println("1content:" + content);
+        byte[] contentBytes;
+        try {
+            contentBytes = content.getBytes("UTF-8");
+//            contentBytes = content.getBytes();
+            String newContent = new String(contentBytes);
+            System.err.println("2Content:" + newContent);
+        } catch (UnsupportedEncodingException e2) {
+            // TODO Auto-generated catch block
+            e2.printStackTrace();
+        }*/
 
         /*Object s1 = new String("Hello");
         Object s2 = new String("Hello");
@@ -255,7 +385,7 @@ public class SrcLearningTest {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        
         /*MainActi mainActi=new MainActi();
         ITest iTest;
         try {
@@ -311,7 +441,7 @@ public class SrcLearningTest {
         Filter filter = new Filter("", "new", "2013", 1);
         filter.setTemplate(cateUrl);
         System.out.println("buildUrl->>>" + filter.buildUrl());
-
+        
         /*//subList改变自己会影响大的外面List
         List<String> outList=new ArrayList<String>();
         for (int i = 0; i < 5; i++) {
