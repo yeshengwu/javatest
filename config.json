@@ -1,0 +1,19 @@
+{
+	"ass": [{
+		"url": "http://video.mopian.tv/frxxz_hanli.ass",
+		"md5": "afe45dd5f2b9e672c3066b8dad813adb"
+	}, {
+		"url": "http://video.mopian.tv/frxxz_nangongwan.ass",
+		"md5": "d20f329c6159c350c78a4b2c6a0adebf"
+	}, {
+		"url": "http://video.mopian.tv/frxxz_yinyue.ass",
+		"md5": "2bd4326543be13eb6336faa203b5d1aa"
+	}],
+	"dataSets": [{
+		"url": "https://raw.githubusercontent.com/yeshengwu/javatest/master/frxxz.xml",
+		"md5": "a6758dabcbf0370de36a0e4a465aec1e"
+	}, {
+		"url": "https://raw.githubusercontent.com/yeshengwu/javatest/master/frxxz.dat",
+		"md5": "95ba8fb7e4341ad55d67bc1b9eec4873"
+	}]
+}
