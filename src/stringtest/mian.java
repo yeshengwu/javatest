@@ -38,6 +38,13 @@ public class mian {
         // 11111111
         System.out.println("isMobile: " + isMobileNO("18111111111"));
 
+        /////equals/////
+        String a = "ab";
+        System.out.println(a.equals(null)); // false
+
+        String test = null;
+        System.out.println(test.equals("a")); // NPE
+        /////equals/////
     }
 
     public static boolean isMobileNO(String mobiles) {
