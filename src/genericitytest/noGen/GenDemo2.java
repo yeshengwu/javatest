@@ -1,4 +1,4 @@
-package genericity.noGen;
+package genericitytest.noGen;
 
 public class GenDemo2 {
     public static void main(String[] args) {

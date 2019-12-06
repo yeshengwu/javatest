@@ -1,4 +1,4 @@
-package genericity.noGen;
+package genericitytest.noGen;
 
 public class Gen2 {
     private Object ob; // 定义一个通用类型成员

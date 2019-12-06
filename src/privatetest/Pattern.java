@@ -1,6 +1,6 @@
-package testPrivate;
+package privatetest;
 
-import testPrivate.test.PatternTest;
+import privatetest.test.PatternTest;
 
 public class Pattern {
     public static void main(String[] args) {

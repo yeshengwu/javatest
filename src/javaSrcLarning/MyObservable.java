@@ -1,4 +1,4 @@
-package test;
+package javaSrcLarning;
 
 import java.util.Observable;
 

@@ -1,4 +1,4 @@
-package testPrivate.test;
+package privatetest.test;
 
 public class PatternTestSub extends PatternTest {
     public static void main(String[] args) {

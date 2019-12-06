@@ -1,4 +1,4 @@
-package test;
+package javaSrcLarning;
 
 import java.util.Iterator;
 import java.util.LinkedList;

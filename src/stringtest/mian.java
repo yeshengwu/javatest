@@ -4,8 +4,12 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.concurrent.PriorityBlockingQueue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,7 +27,8 @@ public class mian {
         
         System.out.println("test: "+flag.lastIndexOf("b")); //5
         
-        System.out.println("string2Date: "+string2Date("2012-01-21 15:29:01", STANDARD_DATE_YMD))*/; // 5
+        System.out.println("string2Date: "+string2Date("2012-01-21 15:29:01", STANDARD_DATE_YMD))*/
+        ; // 5
         /*RGB(-3263232);
         System.out.println("string2Date__old: "+getDateTimeByMillisecond("1362217847", "1362217847")); //5
         System.out.println("string2Date: "+new Date().toLocaleString()); //5
@@ -42,9 +47,181 @@ public class mian {
         String a = "ab";
         System.out.println(a.equals(null)); // false
 
-        String test = null;
-        System.out.println(test.equals("a")); // NPE
+//        String test = null;
+//        System.out.println(test.equals("a")); // NPE
+        String ccc = "";
+        System.out.println(ccc.equals("a")); // false
         /////equals/////
+
+        long mReportStartMs = 0;
+        int durationSec = (int) ((System.currentTimeMillis() - mReportStartMs) / 1000);
+        System.out.println("durationSec = " + durationSec); // 1572648021000L 2019-11-02 06:40:21
+        long start = (1572648021000L - 89419143 * 1000); // 1573423191216  2019-11-11 05:59:51
+        long start2 = (1572648021000L - 89419143 * 1000L); // 1483228878000 2017-01-01 08:01:18
+//        long start = (1572648021 - 89419143);// 1483228878
+        System.out.println("start = " + start);
+        System.out.println("start2 = " + start2);
+        int fin = (int) ((1572648021000L - 1483228878000L) / 1000); //89419143
+//        int fin = (int) ((1572648021000L - 1573423191216L) / 1000); // -775170
+        System.out.println("fin = " + fin);
+
+        long startTime = System.nanoTime();
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        long endTime = System.nanoTime();
+        System.out.println("nona1 = " + (endTime - startTime));
+        System.out.println("nona2 = " + (endTime - startTime) / 1000000000);
+
+        durationSec = 2;
+        durationSec = Math.max(1, durationSec);
+        System.out.println("final durationSec = " + durationSec);
+
+        Object d = null;
+        System.out.println("final cast = " + (String) d);
+
+        String book_id = "3394608059125761";
+//        System.out.println("parseInt = "+Integer.parseInt(book_id));
+//        System.out.println("valueOf = "+Integer.valueOf(book_id));
+        Long aLong = Long.valueOf(book_id);
+        System.out.println("aLong.intValue() = " + aLong.longValue());
+
+        String item = null;
+        ArrayList<String> testList = new ArrayList<>();
+        testList.add(item);
+        System.out.println("testList = " + testList.size());
+
+//        List<String> tasks = null; // NPE crash
+        List<String> tasks = new ArrayList<>();
+        for (String it : tasks) {
+            System.out.println("list null for loop: item = " + it);
+        }
+        System.out.println("finish");
+
+        List<GroupInfo> groupInfos = new ArrayList<>();
+        groupInfos.add(new GroupInfo("1340", false));
+        groupInfos.add(new GroupInfo("1340", false));
+        System.out.println("groupInfos.size = " + groupInfos.size());
+        for (GroupInfo in :
+                groupInfos) {
+            System.out.println("groupInfos.item = " + in);
+        }
+        if (groupInfos.contains(new GroupInfo("1340", true))) {
+            System.out.println("groupInfos.contain");
+        } else {
+            System.out.println("groupInfos.contain else ");
+        }
+
+        PriorityBlockingQueue<P> priorityBlockingQueue = new PriorityBlockingQueue<P>();
+        priorityBlockingQueue.add(new PNormal());
+        priorityBlockingQueue.add(new PBackground());
+        //left = BAC
+        //left = 1
+        //right = NORMAL
+        //right = 0
+        //priorityBlockingQueue.item = BACKGROUND
+        //priorityBlockingQueue.item = NORMAL
+
+//        priorityBlockingQueue.add(new PBackground());
+//        priorityBlockingQueue.add(new PNormal());
+        // left = NORMAL
+        //left = 0
+        //right = BAC
+        //right = 1
+        //priorityBlockingQueue.item = BACKGROUND
+        //priorityBlockingQueue.item = NORMAL
+        for (P p : priorityBlockingQueue) {
+            System.out.println("priorityBlockingQueue.item = " + p);
+        }
+
+
+    }
+
+    public enum Priority {
+        NORMAL,
+        BAC
+
+    }
+
+    public static abstract class P implements Comparable<P> {
+        @Override
+        public int compareTo(P other) {
+            Priority left = this.getPriority();
+            System.out.println("left = "+left);
+            System.out.println("left = "+left.ordinal());
+            Priority right = other.getPriority();
+            System.out.println("right = "+right);
+            System.out.println("right = "+right.ordinal());
+            return right.ordinal() - left.ordinal();
+        }
+
+        abstract protected Priority getPriority();
+    }
+
+    public static class PBackground extends P {
+        @Override
+        protected Priority getPriority() {
+            return Priority.BAC;
+        }
+
+        @Override
+        public String toString() {
+            return "BACKGROUND";
+        }
+    }
+
+    public static class PNormal extends P {
+        @Override
+        protected Priority getPriority() {
+            return Priority.NORMAL;
+        }
+
+        @Override
+        public String toString() {
+            return "NORMAL";
+        }
+    }
+
+    private static class GroupInfo {
+        String gid;
+        boolean completed;
+
+        public GroupInfo(String groupId, boolean completed) {
+            this.gid = groupId;
+            this.completed = completed;
+        }
+
+        @Override
+        public int hashCode() {
+            return gid.hashCode();
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (o == this) {
+                return true;
+            }
+            if (!(o instanceof GroupInfo)) {
+                return false;
+            }
+
+            GroupInfo pn = (GroupInfo) o;
+            if (pn.gid != null) {
+                return pn.gid.equals(gid);
+            }
+
+            return false;
+        }
+
+//        @Override
+//        public String toString() {
+//            return "GroupInfo{" +
+//                           "gid='" + gid + '\'' +
+//                           ", completed=" + completed +
+//                           '}';
+//        }
     }
 
     public static boolean isMobileNO(String mobiles) {
@@ -145,8 +322,7 @@ public class mian {
         return date;
     }
 
-    public static void RGB(int color)
-    {
+    public static void RGB(int color) {
 
         // int r = 0xFF & color;
         // int g = 0xFF00 & color;
@@ -259,7 +435,7 @@ public class mian {
             long create = sdf.parse(createTime).getTime();
             Calendar now = Calendar.getInstance();
             long ms = 1000 * (now.get(Calendar.HOUR_OF_DAY) * 3600 + now.get(Calendar.MINUTE) * 60 + now
-                    .get(Calendar.SECOND));// 毫秒数
+                                                                                                             .get(Calendar.SECOND));// 毫秒数
             long ms_now = now.getTimeInMillis();
             if (ms_now - create < ms) {
                 ret = "今天";
@@ -281,7 +457,7 @@ public class mian {
 
     /**
      * 将date转换成json中的标准日期String格式
-     * 
+     *
      * @param date
      * @return
      */
@@ -299,20 +475,20 @@ public class mian {
 
     /**
      * IP转整型
-     * 
+     *
      * @param ip
      * @return
      */
     public static long ip2int(String ip) {
         String[] items = ip.split("\\.");
         return Long.valueOf(items[0]) << 24
-                | Long.valueOf(items[1]) << 16
-                | Long.valueOf(items[2]) << 8 | Long.valueOf(items[3]);
+                       | Long.valueOf(items[1]) << 16
+                       | Long.valueOf(items[2]) << 8 | Long.valueOf(items[3]);
     }
 
     /**
      * 整型转IP
-     * 
+     *
      * @param ipInt
      * @return
      */
@@ -327,16 +503,14 @@ public class mian {
 
     /**
      * 得到当天
-     * 
+     *
      * @return
      */
-    public static String getCurDate()
-    {
+    public static String getCurDate() {
         return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
 
-    public static void getDate()
-    {
+    public static void getDate() {
         // return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         long curr = System.currentTimeMillis();
         long horus = curr / (24 * 60 * 1000);

@@ -1,4 +1,4 @@
-package genericity;
+package genericitytest;
 
 // 使用了泛型
 /**

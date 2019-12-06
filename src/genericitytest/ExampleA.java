@@ -1,4 +1,4 @@
-package genericity;
+package genericitytest;
 
 public class ExampleA {
     public <T> void f(T x) {
@@ -10,6 +10,6 @@ public class ExampleA {
         ea.f(" ");
         ea.f(10);
         ea.f('a');
-        ea.f(ea); // genericity.ExampleA
+        ea.f(ea); // genericitytest.ExampleA
     }
 }

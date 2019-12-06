@@ -1,6 +1,6 @@
-package test;
+package javaSrcLarning;
 
-import test.ViewDo.onCLickListener;
+import javaSrcLarning.ViewDo.onCLickListener;
 
 public class ViewTest implements onCLickListener {
     public ViewDo view;

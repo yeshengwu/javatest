@@ -1,4 +1,4 @@
-package test;
+package javaSrcLarning;
 
 import java.text.Collator;
 import java.text.DateFormat;

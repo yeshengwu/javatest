@@ -1,4 +1,4 @@
-package genericity;
+package genericitytest;
 
 import java.util.Collection;
 

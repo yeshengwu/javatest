@@ -1,4 +1,4 @@
-package genericity;
+package genericitytest;
 
 public class Point<T> {
     T x;
